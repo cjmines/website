@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cjmines</title>
+    <!--<link rel="stylesheet" href="style.css">-->
+  </head>
+  <body>
+	<h1>cjmines</h1>
+	<h1>terminology</h1>
+	<ul>
+		<li><strong>RMS</strong> (Regular Mine Sweeper): classic minesweeper</li>
+		<li><strong>IMS</strong>: (Infinite Mine Sweeper): an infinite plane of cells with finitely many mines</li>
+		<li><strong>Guess</strong>: A board state where two possible valid mine configurations are possible</li>
+		<li><strong>Progress of a Board</strong>: Given a RMS board M, and then M&#39; which is the same board but with cells being opened or flagged, then the progress of the board denoted P(M, M&#39;) are all the cells which have been flagged or revealed as (x, y) positions.</li>
+		<li><strong>Zero Island</strong>: A contiguous glob of zeros</li>
+		<li><strong>Zero Island Representative</strong>: A (i, j) position inside a zero island</li>
+		<li><strong>NGS</strong>: a RMS board is &quot;No Guess Solvable&quot; (NGS) if there exists a cell (i, j) such that starting the game from that positions allows you to flag all mines without guessing at any step</li>
+		<li><strong>OGS</strong>: a RMS board is &quot;Only Guess Solvable&quot; if in order to solve the board you are required to guess in at least one step</li>
+		<li><strong>Up to No Guess</strong>: Given a board, and a start position (i, j), the &quot;Up to no guess&quot; state of the board is the state of the board up until the first guess is required. Note: For NGS boards this is the solved state, and for OGS boards it is not.</li>
+		<li><strong>Impermiable Separation</strong>: Given two zero islands A, B an Imperimable separation of A, B is a collection of mines such that when present then given two zero island representatives from A, B respectively called a, b, then P(M, UTNG(a, M)) and P(M, UTNG(b, M)) are disjoint</li>
+		<li><strong>Union of to RMS boards</strong>: Given two RMS boards B1 B2 of the same dimensions, their union is the board where a mine is present at index (i, j) iff it is present in B1 or B2</li>
+		<li><strong>NGS Start Positions</strong>: Given a NGS board B ngs_pos(B) are all the starting positions that are NGS of that board
+		<li><strong>NGS Cleared Position</strong>: Given a NGS board B clr_pos(B) are all the positions that are cleared by solving the board
+	</ul>
+	<p>
+		Suppose we have two NGS boards B1, B2, and we take their union to construct a board B, then B is NGS whenever the union doesn't doesn't change any of the non-zero numbers in either board, and clr_pos(B1) intersected with ngs_pos(B2) is non-empty.
+	</p>
+  </body>
+</html>
